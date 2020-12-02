@@ -1,0 +1,27 @@
+
+{% extends "auth/base.html" %}
+{% block title %}log-in{% endblock title %}
+
+{% block content %}
+<h1>login</h1>
+{% if form.errors %}
+    <p>your username and password are did't match please try again</p>
+{%else if% }
+    <p>please use use login form for login</p>
+{% endif %}
+
+
+<p>please enter your login detailes</p>
+<div class="login-form">
+
+    <form action="{% url 'login' %}" method="post">
+
+        {{form.as_p}}
+        {% csrf_token %}
+        <input type="hidden" name="next" value="{{next}}">
+        <p><input type="submit" value="login">login</p>
+    </form>
+    <p><a href="{% url 'password_reset'%}">forgot password?</a></p>
+</div>
+{% endblock content %}
+<h1>hlo</h1>

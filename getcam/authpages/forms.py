@@ -24,8 +24,8 @@ class UserEditForm(forms.ModelForm):
         model = User
         fields = ('first_name','last_name','email')
     
-class UserEditForm(forms.ModelForm):
+class ProfileEditForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ('photo')
+        fields = ('photo',)
     

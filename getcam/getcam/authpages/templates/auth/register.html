@@ -1,0 +1,15 @@
+{% extends "auth/base.html" %}
+
+{% block title %}log-in{% endblock title %}
+
+{% block content %}
+  <h1>sign up</h1>
+  <p>please enter your detailes to register</p>
+
+  <form method="post">
+
+    {{user_form.as_p}}
+    {% csrf_token %}
+    <p><input type="submit" value="Create my account"> </p>
+  </form>
+{% endblock content %}

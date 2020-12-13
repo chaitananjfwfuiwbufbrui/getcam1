@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}Edit yor profile{% endblock title %}
+
+{% block body %}
+
+<div class="container h-100">
+    <div class="row justify-content-md-center h-100">
+        <div class="card-wrapper" style="padding-top: 150px;">
+            
+            <div class="card fat">
+                <div class="card-body">
+                    <h4 class="card-title">Edit yor profile</h4>
+                    <p>you can edit your profileusing below form:</p>
+
+
+                    <div class="form-group">
+                        <form method="post" enctype="multipart/form-data">
+
+                            {{ user_form|crispy }}
+                            {{ profile_form|crispy  }}
+                            {% csrf_token %}
+                            <!-- <p><input type="submit" value="Save your changes"> </p> -->
+                            <button type="submit" class="btn btn-primary btn-block">
+                                Submit
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}

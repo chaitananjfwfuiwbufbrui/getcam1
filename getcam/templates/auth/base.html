@@ -1,0 +1,68 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/base.css">
+
+    <title>{% block title %}{% endblock title %}</title>
+
+</head>
+
+<body>
+    <div class="header">
+
+        {% if messeges %}
+        <ul class="messeges">
+            {% for messege in messages %}
+            <li class="{{ messege.tags }}">{{ message|safe }}
+
+                <a href="#" class="close">x</a>
+
+            </li>
+            {% endfor %}
+        </ul>
+
+        {% endif %}
+        <span class="logo">
+            {% if request.user.is_authenticated %}
+            <ul class="menu">
+                <li {% if section == 'dashboard' %} class="selected" {% endif %}}>
+                    <a href="#">My dashboard</a>
+
+                </li>
+                <li {% if section == 'images' %} class="selected" {% endif %}}>
+                    <a href="#">Images</a>
+
+                </li>
+                <li {% if section == 'people' %} class="selected" {% endif %}}>
+                    <a href="#">people</a>
+
+                </li>
+            </ul>
+            <span class="user">
+                {% if request.user.is_authenticated %}
+                login as {{request.user}}
+
+
+                <a href="{% url 'logout' %}">logout</a>
+                {% else %}
+                <a href="{% url 'login' %}">login</a>
+                {% endif %}
+
+
+            </span>
+
+            {% endif %}
+        </span>
+    </div>
+    {% block content %}
+
+    {% endblock content %}
+
+</body>
+
+</html>

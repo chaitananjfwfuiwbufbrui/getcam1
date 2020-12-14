@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}log-out{% endblock title %}
+
+{% block body %}
+
+<div class="my-login-page">
+
+  <div class="container h-100">
+    <div class="row justify-content-md-center h-100">
+      <div class="card-wrapper" style="padding-top: 150px;">
+
+        <div class="card fat">
+          <div class="card-body">
+            <h4 class="card-title">Log-out</h4>
+            <p>you have been successfully logout</p>
+            <a href="{% url 'login' %}">login-again</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock body %}

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{messe}}{% endblock title %}
+
+{% block body %}
+
+  {% if errorr %}
+  <div class="container text-center py-4">
+    <section class="centered">
+      <h1>please try again !!</h1>
+      <div class="container">
+        
+        <div><span class="hidden" id="js-hidden">Message Here <a href="/">get to the home</a> </span></div>
+      </div>
+    </section>
+    
+  </div>
+   
+     
+   {% else %}
+     
+   
+   
+     
+    <div class="container text-center py-4">
+      
+      
+      
+      <h1  class="display-5 py-4">successfully account created ! {{new_user.first_Name}}</h1>
+      <p>your account has been successfully created </p>
+      <a href="{% url 'login' %}">log in</a>
+    </div>
+    
+  {% endif %}
+  {% endblock body %}
+

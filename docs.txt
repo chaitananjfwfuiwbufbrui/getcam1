@@ -1,1 +1,2 @@
 1.6 - added social auth and buttons
+1.7 - added verifications for email <---bugs present-->

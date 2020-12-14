@@ -4,7 +4,7 @@ from . import views
 
 
 
-
+from .views import verficationview
 
 urlpatterns = [
     # path('', include('allauth.urls')),
@@ -26,5 +26,8 @@ urlpatterns = [
     path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(),name='password_reset_conformview'),
     path('reset/done/', auth_views.PasswordResetCompleteView.as_view(),name='password_reset_complete'),
 
+
+
+    path('activate/<uidb64>/<token>/', verficationview.as_view(),name='activate'),
 # 
 ]

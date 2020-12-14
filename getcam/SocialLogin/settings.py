@@ -145,10 +145,11 @@ LOGOUT_URL = 'logout'
 
 
 
-
+#email stuff
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = '587'
 EMAIL_HOST_USER = 'kc508275@gmail.com'
+DEFAULT_FROM_EMAIL = 'kc508275@gmail.com'
 EMAIL_HOST_PASSWORD = '2001kc2005'
 EMAIL_USE_TLS =True
 
